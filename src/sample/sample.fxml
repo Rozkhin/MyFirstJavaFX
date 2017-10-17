@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<BorderPane xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <top>
+      <HBox prefWidth="620.0" BorderPane.alignment="CENTER">
+         <children>
+            <Spinner fx:id="n1spiner" initialValue="5" max="9" min="0" minWidth="50.0" />
+            <Spinner fx:id="n2spiner" initialValue="5" max="9" min="0" minWidth="50.0" />
+            <Spinner fx:id="n3spiner" initialValue="5" max="9" min="0" minWidth="50.0" />
+            <Spinner fx:id="n4spiner" initialValue="5" max="9" min="0" minWidth="50.0" />
+            <Button minWidth="50.0" mnemonicParsing="false" onAction="#DoGo" text="go" />
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <TableView fx:id="ResultTable" BorderPane.alignment="CENTER">
+        <columns>
+            <TableColumn editable="false" prefWidth="75.0" sortable="false" text="ход" >
+            <cellValueFactory>
+                <PropertyValueFactory property="nr"/>
+            </cellValueFactory>
+            </TableColumn>
+            <TableColumn editable="false" prefWidth="75.0" sortable="false" text="2" >
+            <cellValueFactory>
+                <PropertyValueFactory property="n1"/>
+            </cellValueFactory>
+            </TableColumn>
+          <TableColumn editable="false" prefWidth="75.0" sortable="false" text="3" >
+              <cellValueFactory>
+                  <PropertyValueFactory property="n2"/>
+              </cellValueFactory>
+          </TableColumn>
+          <TableColumn editable="false" prefWidth="75.0" sortable="false" text="4" >
+              <cellValueFactory>
+                  <PropertyValueFactory property="n3"/>
+              </cellValueFactory>
+          </TableColumn>
+            <TableColumn editable="false" prefWidth="75.0" sortable="false" text="5" >
+                <cellValueFactory>
+                    <PropertyValueFactory property="n4"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn editable="false" maxWidth="138.0" minWidth="-1.0" prefWidth="124.0" sortable="false" text="Быки" >
+                <cellValueFactory>
+                    <PropertyValueFactory property="covs"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn editable="false" prefWidth="120.0" sortable="false" text="Коровы" >
+                <cellValueFactory>
+                    <PropertyValueFactory property="Bulls"/>
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+      </TableView>
+   </center>
+</BorderPane>
